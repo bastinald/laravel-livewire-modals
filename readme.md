@@ -46,6 +46,14 @@ class ProfileUpdate extends Component
 }
 ```
 
+Your view should contain a `modal-body` container:
+
+```html
+<div class="modal-body">
+    {{ __('I am the model body content.') }}
+</div>
+```
+
 Show the modal via `$emit('showModal', 'component-alias')`:
 
 ```html

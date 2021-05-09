@@ -6,11 +6,9 @@
                 <button type="button" class="btn-close" aria-label="{{ __('Close') }}"
                     wire:click="$emit('hideModal')"></button>
             </div>
-            <div class="modal-body">
-                @if($component)
-                    @livewire($component, $data)
-                @endif
-            </div>
+            @if($component)
+                @livewire($component, $data)
+            @endif
         </div>
     </div>
 </div>
