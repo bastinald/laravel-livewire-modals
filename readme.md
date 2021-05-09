@@ -32,7 +32,7 @@ require('../../vendor/bastinald/laravel-livewire-modals/js/modals');
 
 ## Usage
 
-Specify a `title` for the modal in your Livewire component:
+Specify a `title` for the modal in your Livewire component (the body content for the modal comes from the `render` method):
 
 ```php
 class ProfileUpdate extends Component
