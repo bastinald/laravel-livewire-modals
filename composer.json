@@ -1,0 +1,29 @@
+{
+    "name": "bastinald/laravel-livewire-modals",
+    "homepage": "https://github.com/bastinald/laravel-livewire-modals",
+    "description": "Dynamic Laravel Livewire Bootstrap 5 modals.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Dion",
+            "email": "bastinald@icloud.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^8.0",
+        "livewire/livewire": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bastinald\\LaravelLivewireModals\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bastinald\\LaravelLivewireModals\\Providers\\LaravelLivewireModalsProvider"
+            ]
+        }
+    }
+}
