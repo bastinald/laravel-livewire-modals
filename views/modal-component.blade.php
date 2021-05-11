@@ -3,8 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{ __($title) }}</h5>
-                <button type="button" class="btn-close" aria-label="{{ __('Close') }}"
-                    wire:click="$emit('hideModal')"></button>
+                <button type="button" class="btn-close" wire:click="$emit('hideModal')"></button>
             </div>
             @if($component)
                 @livewire($component, $data)

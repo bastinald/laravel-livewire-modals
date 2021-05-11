@@ -50,7 +50,7 @@ Your view should contain a `modal-body` container:
 
 ```html
 <div class="modal-body">
-    {{ __('I am the model body content.') }}
+    {{ __('I am the modal body content.') }}
 </div>
 ```
 
@@ -72,10 +72,23 @@ You can also pass parameters to the component `mount` method:
 </button>
 ```
 
-Hiding the currently open model can be done via `$emit('hideModal')`:
+Hiding the currently open modal can be done via `$emit('hideModal')`:
 
 ```html
 <button type="button" wire:click="$emit('hideModal')">
     {{ __('Close') }}
 </button>
+```
+
+You can also hide modals via your Livewire components:
+
+```php
+public function save()
+{
+    $this->validate();
+
+    // save the record
+
+    $this->emit('hideModal');
+}
 ```
