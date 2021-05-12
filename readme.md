@@ -32,7 +32,7 @@ require('../../vendor/bastinald/laravel-livewire-modals/js/modals');
 
 ## Usage
 
-Specify a `title` for the modal in your Livewire component (the body content for the modal comes from the `render` method):
+Specify a `title` for the modal in your Livewire component (the modal body content comes from the `render` method):
 
 ```php
 class ProfileUpdate extends Component
@@ -44,14 +44,6 @@ class ProfileUpdate extends Component
         return view('profile-update');
     }
 }
-```
-
-Your view should contain a `modal-body` container:
-
-```html
-<div class="modal-body">
-    {{ __('I am the modal body content.') }}
-</div>
 ```
 
 Show the modal via `$emit('showModal', 'component-alias')`:
@@ -72,6 +64,17 @@ You can also pass parameters to the component `mount` method:
 </button>
 ```
 
+Your component mount method for the example above would look something like this: 
+
+```php
+public $user;
+
+public function mount(User $user)
+{
+    $this->user = $user;
+}
+```
+
 Hiding the currently open modal can be done via `$emit('hideModal')`:
 
 ```html
@@ -80,7 +83,7 @@ Hiding the currently open modal can be done via `$emit('hideModal')`:
 </button>
 ```
 
-You can also hide modals via your Livewire components:
+You can also hide modals inside your Livewire component via `$this->emit('hideModal')`:
 
 ```php
 public function save()

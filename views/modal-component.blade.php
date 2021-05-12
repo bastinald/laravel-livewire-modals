@@ -5,9 +5,11 @@
                 <h5 class="modal-title">{{ __($title) }}</h5>
                 <button type="button" class="btn-close" wire:click="$emit('hideModal')"></button>
             </div>
-            @if($component)
-                @livewire($component, $data)
-            @endif
+            <div class="modal-body">
+                @if($component)
+                    @livewire($component, $data)
+                @endif
+            </div>
         </div>
     </div>
 </div>
