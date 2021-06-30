@@ -1,22 +1,17 @@
-window.bootstrap = require('bootstrap');
+import {Modal} from 'bootstrap';
+
+let modalsElement = document.getElementById('laravel-livewire-modals');
+
+modalsElement.addEventListener('hidden.bs.modal', () => {
+    Livewire.emit('resetModal');
+});
 
 Livewire.on('showBootstrapModal', () => {
-    let element = document.getElementById('laravel-livewire-modals');
-    let modal = new window.bootstrap.Modal(element, {
-        backdrop: 'static',
-        keyboard: false,
-    });
-
+    let modal = new Modal(modalsElement);
     modal.show();
 });
 
 Livewire.on('hideModal', () => {
-    let element = document.getElementById('laravel-livewire-modals');
-    let modal = bootstrap.Modal.getInstance(element);
-
-    element.addEventListener('hidden.bs.modal', () => {
-        Livewire.emit('resetModal');
-    });
-
+    let modal = Modal.getInstance(modalsElement);
     modal.hide();
 });

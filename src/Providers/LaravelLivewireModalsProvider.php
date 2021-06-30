@@ -2,7 +2,7 @@
 
 namespace Bastinald\LaravelLivewireModals\Providers;
 
-use Bastinald\LaravelLivewireModals\Components\ModalComponent;
+use Bastinald\LaravelLivewireModals\Components\Modals;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -16,6 +16,6 @@ class LaravelLivewireModalsProvider extends ServiceProvider
             __DIR__ . '/../../views' => resource_path('views/vendor/laravel-livewire-modals'),
         ]);
 
-        Livewire::component('modals', ModalComponent::class);
+        Livewire::component('modals', Modals::class);
     }
 }
