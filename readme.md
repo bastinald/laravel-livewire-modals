@@ -7,6 +7,11 @@ This package allows you to dynamically show your Laravel Livewire components ins
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+    - [Modal Views](#modal-views)
+    - [Showing Modals](#showing-modals)
+    - [Mount Parameters](#mount-parameters)
+    - [Hiding Modals](#hiding-modals)
+    - [Emitting Events](#emitting-events)
 
 ## Requirements
 
@@ -37,6 +42,8 @@ require('../../vendor/bastinald/laravel-livewire-modals/js/modals');
 ```
 
 ## Usage
+
+### Modal Views
 
 Make a Livewire component you want to show as a modal. The view for this component must use the Bootstrap `modal-dialog` container:
 
