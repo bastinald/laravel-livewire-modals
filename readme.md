@@ -12,6 +12,7 @@ This package allows you to dynamically show your Laravel Livewire components ins
     - [Mount Parameters](#mount-parameters)
     - [Hiding Modals](#hiding-modals)
     - [Emitting Events](#emitting-events)
+- [Publishing the View](#publishing-the-view)
 
 ## Requirements
 
@@ -149,3 +150,13 @@ public function save()
     $this->emit('hideModal');
 }
 ```
+
+## Publishing the View
+
+Use your own modals view by publishing the package view:
+
+```console
+php artisan vendor:publish --tag=laravel-livewire-modals
+```
+
+Now edit the view file inside `resources/views/vendor/laravel-livewire-modals`. The package will use this view to render the component.
