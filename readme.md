@@ -159,7 +159,7 @@ public function save()
 Use your own modals view by publishing the package view:
 
 ```console
-php artisan vendor:publish --tag=laravel-livewire-modals
+php artisan vendor:publish --tag=laravel-livewire-modals:views
 ```
 
 Now edit the view file inside `resources/views/vendor/laravel-livewire-modals`. The package will use this view to render the component.

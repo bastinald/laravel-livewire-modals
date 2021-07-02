@@ -14,7 +14,7 @@ class LaravelLivewireModalsProvider extends ServiceProvider
 
         $this->publishes(
             [__DIR__ . '/../../resources/views' => resource_path('views/vendor/laravel-livewire-modals')],
-            'laravel-livewire-modals'
+            ['laravel-livewire-modals', 'laravel-livewire-modals:views']
         );
 
         Livewire::component('modals', Modals::class);
