@@ -12,7 +12,8 @@ This package allows you to dynamically show your Laravel Livewire components ins
     - [Mount Parameters](#mount-parameters)
     - [Hiding Modals](#hiding-modals)
     - [Emitting Events](#emitting-events)
-- [Publishing the View](#publishing-the-view)
+- [Publishing Assets](#publishing-assets)
+    - [Custom View](#custom-view)
 
 ## Requirements
 
@@ -34,12 +35,12 @@ Add the `livewire:modals` component to your app layout view:
 <script src="{{ asset('js/app.js') }}"></script>
 ```
 
-Require `../../vendor/bastinald/laravel-livewire-modals/js/modals` in your app javascript file:
+Require `../../vendor/bastinald/laravel-livewire-modals/resources/js/modals` in your app javascript file:
 
 ```javascript
 require('@popperjs/core');
 require('bootstrap');
-require('../../vendor/bastinald/laravel-livewire-modals/js/modals');
+require('../../vendor/bastinald/laravel-livewire-modals/resources/js/modals');
 ```
 
 ## Usage
@@ -151,7 +152,9 @@ public function save()
 }
 ```
 
-## Publishing the View
+## Publishing Assets
+
+### Custom View
 
 Use your own modals view by publishing the package view:
 
