@@ -82,7 +82,7 @@ Show a modal by emitting the `showModal` event with the component alias:
 Pass parameters to the component `mount` method after the alias:
 
 ```html
-<button type="button" wire:click="$emit('showModal', 'users.update', {{ $user->id }})">
+<button type="button" wire:click="$emit('showModal', 'users.update', '{{ $user->id }}')">
     {{ __('Update User #' . $user->id) }}
 </button>
 ```
