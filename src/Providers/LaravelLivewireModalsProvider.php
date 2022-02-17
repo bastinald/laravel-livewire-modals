@@ -10,11 +10,17 @@ class LaravelLivewireModalsProvider extends ServiceProvider
 {
     public function boot()
     {
+        $this->registerViews();
+        $this->registerLivewireComponents();
+        $this->registerDirectives();
 
         $this->publishes(
             [__DIR__ . '/../../resources/views' => resource_path('views/vendor/laravel-livewire-modals')],
             ['laravel-livewire-modals', 'laravel-livewire-modals:views']
         );
+        $this->publishes([
+                __DIR__ . '/../resources/js' => public_path('vendor/laravel-livewire-modals'),
+         ], 'laravel-livewire-modals:script');
 
 
     }
@@ -32,7 +38,7 @@ class LaravelLivewireModalsProvider extends ServiceProvider
     private function registerDirectives()
     {
         Blade::directive('laravelLivewireModalScript', function () {
-            return '<script src="' . asset("/vendor/laravel-livewire-modal/modal.js") . '"></script>';
+            return '<script src="' . asset("/vendor/laravel-livewire-modal/modals.js") . '"></script>';
         });
     }
 
