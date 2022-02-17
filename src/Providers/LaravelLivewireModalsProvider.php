@@ -13,16 +13,7 @@ class LaravelLivewireModalsProvider extends ServiceProvider
         $this->registerViews();
         $this->registerLivewireComponents();
         $this->registerDirectives();
-
-        $this->publishes(
-            [__DIR__ . '/../../resources/views' => resource_path('views/vendor/laravel-livewire-modals')],
-            ['laravel-livewire-modals', 'laravel-livewire-modals:views']
-        );
-        $this->publishes([
-                __DIR__ . '/../resources/js' => public_path('vendor/laravel-livewire-modals'),
-         ], 'laravel-livewire-modals:script');
-
-
+        $this->registerPublishables();       
     }
     
     private function registerViews(): void
@@ -37,25 +28,24 @@ class LaravelLivewireModalsProvider extends ServiceProvider
 
     private function registerDirectives()
     {
-        Blade::directive('laravelLivewireModalScript', function () {
-            return '<script src="' . asset("/vendor/laravel-livewire-modal/modals.js") . '"></script>';
+        Blade::directive('laravelLivewireModalScripts', function () {
+            return '<script src="' . asset("/vendor/laravel-livewire-modals/modals.js") . '"></script>';
         });
     }
 
     private function registerPublishables(): void
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__ . '/../resources/views' => resource_path('views/vendor/livewire-modal-twitter'),
-            ], 'livewire-modal-twitter:views');
+            
+            $this->publishes(
+                [__DIR__ . '/../../resources/views' => resource_path('views/vendor/laravel-livewire-modals')],
+                ['laravel-livewire-modals', 'laravel-livewire-modals:views']
+            );
+            $this->publishes(
+                [__DIR__ . '/../resources/js' => public_path('vendor/laravel-livewire-modals')], 
+                'laravel-livewire-modals:script'
+            );
 
-            $this->publishes([
-                __DIR__ . '/../resources/js' => resource_path('js/vendor/livewire-modal-twitter'),
-            ], 'livewire-modal-twitter:script');
-
-            $this->publishes([
-                __DIR__ . '/../public' => public_path('vendor/livewire-modal-twitter'),
-            ], 'livewire-modal-twitter:public');
         }
     }
 
