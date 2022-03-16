@@ -11,8 +11,8 @@
         }
     ],
     "require": {
-        "laravel/framework": "^8.0",
-        "livewire/livewire": "^2.0"
+        "laravel/framework": "^9.0",
+        "livewire/livewire": "^2.10"
     },
     "autoload": {
         "psr-4": {
