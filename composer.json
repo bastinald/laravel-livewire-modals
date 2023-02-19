@@ -28,7 +28,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "LivewireModalsProvider"
+        "SmirlTech\\LivewireModals\\LivewireModalsProvider"
       ]
     }
   }
