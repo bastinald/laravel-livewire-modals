@@ -12,7 +12,7 @@ class LivewireModalsProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('livewire-modals')
+            ->name('modals')
             ->hasViews();
     }
 
