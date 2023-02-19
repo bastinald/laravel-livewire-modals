@@ -16,7 +16,7 @@ class Modals extends Component
 
     public function render(): Factory|View|Application
     {
-        return view('livewire-modals::modals');
+        return view('modals::modals');
     }
 
     public function showModal($alias, ...$params): void
