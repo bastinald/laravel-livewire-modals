@@ -2,21 +2,22 @@
 
 namespace SmirlTech\LivewireModals\Providers;
 
-use SmirlTech\LivewireModals\Components\Modals;
-use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
+use SmirlTech\LivewireModals\Components\Modals;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LivewireModalsProvider extends ServiceProvider
+class LivewireModalsProvider extends PackageServiceProvider
 {
-    public function boot()
+    public function configurePackage(Package $package): void
     {
-        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'livewire-modals');
+        $package
+            ->name('livewire-modals')
+            ->hasViews();
+    }
 
-        $this->publishes(
-            [__DIR__ . '/../../resources/views' => resource_path('views/vendor/livewire-modals')],
-            ['livewire-modals', 'livewire-modals:views']
-        );
-
-        Livewire::component('modals', Modals::class);
+    public function packageBooted()
+    {
+        Livewire::component('livewire-modals::modals', Modals::class);
     }
 }
