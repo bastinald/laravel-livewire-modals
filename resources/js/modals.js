@@ -1,6 +1,6 @@
 import {Modal} from 'bootstrap';
 
-let modalsElement = document.getElementById('laravel-livewire-modals');
+let modalsElement = document.getElementById('livewire-modals');
 
 modalsElement.addEventListener('hidden.bs.modal', () => {
     Livewire.emit('resetModal');

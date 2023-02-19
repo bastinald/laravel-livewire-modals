@@ -1,6 +1,6 @@
 <?php
 
-namespace Bastinald\LaravelLivewireModals\Components;
+namespace SmirlTech\LivewireModals\Components;
 
 use Livewire\Component;
 
@@ -13,7 +13,7 @@ class Modals extends Component
 
     public function render()
     {
-        return view('laravel-livewire-modals::modals');
+        return view('livewire-modals::modals');
     }
 
     public function showModal($alias, ...$params)

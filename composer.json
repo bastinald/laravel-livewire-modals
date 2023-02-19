@@ -1,6 +1,6 @@
 {
-    "name": "bastinald/laravel-livewire-modals",
-    "homepage": "https://github.com/bastinald/laravel-livewire-modals",
+    "name": "smirltech/livewire-modals",
+    "homepage": "https://github.com/smirltech/livewire-modals",
     "description": "Dynamic Laravel Livewire Bootstrap modals.",
     "license": "MIT",
     "authors": [
@@ -8,6 +8,11 @@
             "name": "Kevin Dion",
             "email": "bastinald@icloud.com",
             "role": "Developer"
+        },
+        {
+            "name": "Marien Mupeda",
+            "email": "marien@smirltech.com",
+            "role": "Maintainer"
         }
     ],
     "require": {
@@ -16,13 +21,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Bastinald\\LaravelLivewireModals\\": "src"
+            "SmirlTech\\LivewireModals\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Bastinald\\LaravelLivewireModals\\Providers\\LaravelLivewireModalsProvider"
+                "LivewireModalsProvider"
             ]
         }
     }
