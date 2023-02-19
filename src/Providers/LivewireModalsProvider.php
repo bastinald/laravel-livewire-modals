@@ -16,7 +16,7 @@ class LivewireModalsProvider extends PackageServiceProvider
             ->hasViews();
     }
 
-    public function packageBooted()
+    public function packageBooted(): void
     {
         Livewire::component('livewire-modals::modals', Modals::class);
     }
