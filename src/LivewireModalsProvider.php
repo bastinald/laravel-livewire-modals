@@ -1,6 +1,6 @@
 <?php
 
-namespace SmirlTech\LivewireModals\Providers;
+namespace SmirlTech\LivewireModals;
 
 use Livewire\Livewire;
 use SmirlTech\LivewireModals\Components\Modals;
