@@ -1,6 +1,4 @@
 <script>
-    import {Modal} from 'bootstrap';
-
     let modalsElement = document.getElementById('livewire-modals');
 
     modalsElement.addEventListener('hidden.bs.modal', () => {
@@ -8,11 +6,7 @@
     });
 
     Livewire.on('showBootstrapModal', () => {
-        let modal = Modal.getInstance(modalsElement);
-
-        if (!modal) {
-            modal = new Modal(modalsElement);
-        }
+        let modal = new Modal(modalsElement)
 
         modal.show();
     });
