@@ -17,13 +17,24 @@ This package allows you to dynamically show your Laravel Livewire components ins
 
 ## Requirements
 
-Bootstrap 5 must be installed via webpack first and the `bootstrap` and `popper.js` packages must be required in your
-app javascript file.
+Install Bootstrap 5 and Popper.js 2 in your app. See
+the [Bootstrap 5 docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/#js) for more information.
 
-```javascript
-require('@popperjs/core');
+  ```console
+  npm install bootstrap @popperjs/core
+  ```
+
+Require `bootstrap` and `popper.js` packages in your
+app javascript file. Then import the `Modal` class from `bootstrap` and add it to the `window` object.
+
+  ```javascript
+  require('@popperjs/core');
 require('bootstrap');
-```
+
+import {Modal} from 'bootstrap';
+
+window.Modal = Modal;
+  ```
 
 ## Installation
 
@@ -33,7 +44,7 @@ Require the package:
 composer require smirltech/livewire-modals
 ```
 
-Add the `livewire:modals` component to your app layout view:
+Add `livewire:modals` and `x-modals::scripts` components to your layout:
 
 ```html
 
@@ -69,6 +80,20 @@ container:
 </div>
 ```
 
+Alternatively, you can use the `x-modals::modal` or `x-modals::modal-form` component:
+
+```html
+
+<x-modals::modal>
+    <x-slot:title>Modal title</x-slot:title>
+    <p>Modal body text goes here.</p>
+    <x-slot:footer>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+    </x-slot:footer>
+</x-modals::modal>
+```
+
 ### Showing Modals
 
 Show a modal by emitting the `showModal` event with the component alias:
@@ -78,6 +103,15 @@ Show a modal by emitting the `showModal` event with the component alias:
 <button type="button" wire:click="$emit('showModal', 'auth.profile-update')">
     {{ __('Update Profile') }}
 </button>
+```
+
+Outside of Livewire components, you can use the `Livewire.emit` method:
+
+```html
+
+<script>
+    Livewire.emit('showModal', 'auth.profile-update');
+</script>
 ```
 
 ### Mount Parameters
