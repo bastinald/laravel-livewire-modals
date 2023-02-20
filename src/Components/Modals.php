@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class Modals extends Component
 {
-    public string $alias;
+    public string $alias = '';
     public array $params = [];
 
     protected $listeners = ['showModal', 'resetModal'];
