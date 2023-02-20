@@ -9,14 +9,14 @@ use Livewire\Component;
 
 class Modals extends Component
 {
-    public mixed $alias;
+    public string $alias = '';
     public array $params = [];
 
     protected $listeners = ['showModal', 'resetModal'];
 
     public function render(): Factory|View|Application
     {
-        return view('livewire-modals::modals');
+        return view('modals::modals');
     }
 
     public function showModal($alias, ...$params): void

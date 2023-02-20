@@ -1,6 +1,6 @@
 <?php
 
-namespace SmirlTech\LivewireModals\Providers;
+namespace SmirlTech\LivewireModals;
 
 use Livewire\Livewire;
 use SmirlTech\LivewireModals\Components\Modals;
@@ -12,12 +12,12 @@ class LivewireModalsProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('livewire-modals')
+            ->name('modals')
             ->hasViews();
     }
 
     public function packageBooted(): void
     {
-        Livewire::component('livewire-modals::modals', Modals::class);
+        Livewire::component('modals', Modals::class);
     }
 }
