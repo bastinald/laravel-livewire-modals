@@ -27,9 +27,22 @@ the [Bootstrap 5 docs](https://getbootstrap.com/docs/5.0/getting-started/introdu
 Require `bootstrap` and `popper.js` packages in your
 app javascript file. Then import the `Modal` class from `bootstrap` and add it to the `window` object.
 
+Using `mix`
+
   ```javascript
   require('@popperjs/core');
 require('bootstrap');
+
+import {Modal} from 'bootstrap';
+
+window.Modal = Modal;
+  ```
+
+Using `vite`
+
+  ```javascript
+  import('@popperjs/core');
+import('bootstrap');
 
 import {Modal} from 'bootstrap';
 
