@@ -93,7 +93,7 @@ container:
 </div>
 ```
 
-Alternatively, you can use the `x-modals::base` or `x-modals::base-form` component:
+Alternatively, you can use the `x-modals::base` or `x-modals::form` component:
 
 ```html
 
