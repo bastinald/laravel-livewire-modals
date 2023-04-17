@@ -93,18 +93,18 @@ container:
 </div>
 ```
 
-Alternatively, you can use the `x-modals::modal` or `x-modals::modal-form` component:
+Alternatively, you can use the `x-modals::base` or `x-modals::base-form` component:
 
 ```html
 
-<x-modals::modal>
+<x-modals::base>
     <x-slot:title>Modal title</x-slot:title>
     <p>Modal body text goes here.</p>
     <x-slot:footer>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
     </x-slot:footer>
-</x-modals::modal>
+</x-modals::base>
 ```
 
 ### Showing Modals
