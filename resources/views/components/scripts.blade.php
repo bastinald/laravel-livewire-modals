@@ -16,4 +16,12 @@
 
         modal.hide();
     });
+
+    function showModal(alias, data = null) {
+        Livewire.emit('showModal', alias, data);
+    }
+
+    function hideModal(alias) {
+        Livewire.emit('hideModal', alias);
+    }
 </script>

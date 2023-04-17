@@ -27,9 +27,22 @@ the [Bootstrap 5 docs](https://getbootstrap.com/docs/5.0/getting-started/introdu
 Require `bootstrap` and `popper.js` packages in your
 app javascript file. Then import the `Modal` class from `bootstrap` and add it to the `window` object.
 
+Using `mix`
+
   ```javascript
   require('@popperjs/core');
 require('bootstrap');
+
+import {Modal} from 'bootstrap';
+
+window.Modal = Modal;
+  ```
+
+Using `vite`
+
+  ```javascript
+  import('@popperjs/core');
+import('bootstrap');
 
 import {Modal} from 'bootstrap';
 
@@ -80,18 +93,18 @@ container:
 </div>
 ```
 
-Alternatively, you can use the `x-modals::modal` or `x-modals::modal-form` component:
+Alternatively, you can use the `x-modals::base` or `x-modals::form` component:
 
 ```html
 
-<x-modals::modal>
+<x-modals::base>
     <x-slot:title>Modal title</x-slot:title>
     <p>Modal body text goes here.</p>
     <x-slot:footer>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
     </x-slot:footer>
-</x-modals::modal>
+</x-modals::base>
 ```
 
 ### Showing Modals
