@@ -102,13 +102,8 @@ Alternatively, you can use the `x-modals::base` or `x-modals::form` component:
 
 ```html
 
-<x-modals::base>
-    <x-slot:title>Modal title</x-slot:title>
-    <p>Modal body text goes here.</p>
-    <x-slot:footer>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-    </x-slot:footer>
+<x-modals::base title="Modal title">
+    Modal body text goes here.
 </x-modals::base>
 ```
 
